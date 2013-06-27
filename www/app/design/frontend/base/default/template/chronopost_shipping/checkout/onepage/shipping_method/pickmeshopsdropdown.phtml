@@ -1,0 +1,42 @@
+<li>
+    <label for="shipping-pickmeshops"><?php echo $this->__('Choose one of our PickMe Chronopost stores.') ?></label>
+    <div class="input-box">
+        <label><?php echo $this->__('The best price and speed') ?></label>
+        <select id="shipping-pickmeshops" name="pickme_shops" title="<?php echo $this->__('PickMe Shop') ?>">
+        <optgroup
+        <?php
+            $shops = $this->getPickmeshopsArrayOptions();
+            $curLocation = null;
+            foreach($shops as $value => $shop):
+                $shop = explode(' # ', $shop);
+                $address = explode(' ',$shop[2]);
+                foreach ($address as $i=>$v) $address[$i] = ucfirst(strtolower($v));
+                $address1 = implode(' ', $address);
+
+                if ($curLocation==null) {
+                    echo ' label="'.$shop[1].'">';
+                    $curLocation = $shop[1];
+                }
+                if ($curLocation!=null && $shop[1]!=$curLocation) {
+                    $curLocation = $shop[1];
+                    echo '</optgroup> <optgroup label="'.$curLocation.'">';
+                }
+        ?>
+            <option value="<?php echo $value; ?>" <?php if($value == $this->getSelectedPickmeshops()) echo ' selected="selected"';?>><?php echo $shop[0].' - '.$address1; ?></option>
+        <?php
+            endforeach;
+        ?>
+        </optgroup>
+        </select>
+    </div>
+</li>
+<script type="text/javascript">
+//<![CDATA[
+    if ($('pickmeshops_block').descendants().length > 0) {
+        $('s_method_pickme_pickme').up().insert($('pickmeshops_block').descendants()[0]);
+        $('pickmeshops_block').show();
+    }
+//]]>
+</script>
+</span>
+</span>

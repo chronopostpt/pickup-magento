@@ -1,0 +1,27 @@
+
+<script type="text/javascript">
+    //<![CDATA[
+    function synchronize() {
+         new Ajax.Request('<?php echo $this->getAjaxSynchronizeUrl() ?>', {
+            method:     'post',
+            parameters:	{url_ws: $('carriers_pickme_pickme_url').value},
+            onSuccess: 	function(transport){
+
+            if (transport.responseText){
+                if (transport.responseText == 1) {
+                	alert('Synchronized with success');
+                } else {
+					alert('Error: ' + transport.responseText);
+                }
+                //alert('Synchronized with sucess')
+            } else {
+                alert('Error: no response from controller');
+            }
+            
+            }
+        });
+    }
+    //]]>
+</script>
+
+<?php echo $this->getButtonHtml() ?>

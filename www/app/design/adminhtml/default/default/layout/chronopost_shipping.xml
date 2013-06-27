@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_sales_order_create_index>
+		<reference name="shipping_method">
+			<block type="chronopost_shipping/adminhtml_createorder_pickme"
+				template="chronopost/create_order/pickme.phtml" name="create_pickme" />
+		</reference>
+	</adminhtml_sales_order_create_index>
+	<adminhtml_sales_order_create_load_block_data>
+		<reference name="shipping_method">
+			<block type="chronopost_shipping/adminhtml_createorder_pickme"
+				template="chronopost/create_order/pickme.phtml" name="create_pickme" />
+		</reference>
+	</adminhtml_sales_order_create_load_block_data>
+	<adminhtml_sales_order_create_load_block_shipping_method>
+		<reference name="shipping_method">
+			<block type="chronopost_shipping/adminhtml_createorder_pickme"
+				template="chronopost/create_order/pickme.phtml" name="create_pickme" />
+		</reference>
+	</adminhtml_sales_order_create_load_block_shipping_method>
+	<add_order_grid_column_handle>
+		<reference name="sales_order.grid">
+			<action method="addColumnAfter">
+				<columnId>pickme</columnId>
+				<arguments module="Chronopost_Shipping" translate="header">
+					<header>PickMe ID</header>
+					<index>pickme_id</index>
+				</arguments>
+				<after>shipping_name</after>
+			</action>
+		</reference>
+	</add_order_grid_column_handle>
+	<adminhtml_sales_order_grid>
+		<update handle="add_order_grid_column_handle" />
+	</adminhtml_sales_order_grid>
+	<adminhtml_sales_order_index>
+		<update handle="add_order_grid_column_handle" />
+	</adminhtml_sales_order_index>
+	<adminhtml_sales_order_view>
+		<reference name="order_tab_info">
+			<action method="setTemplate">
+				<template>chronopost/view_order/tab/info.phtml</template>
+			</action>
+		</reference>
+	</adminhtml_sales_order_view>
+</layout>

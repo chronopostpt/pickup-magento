@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<carriers>
+			<groups>
+				<pickme translate="label" module="shipping">
+					<label>Chronopost PickMe</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>13</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<pickme_url translate="label">
+							<label>PickMe webservice</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</pickme_url>
+					  	<synchronize translate="label">
+							<label>PickMe Shops</label>
+							<frontend_type>button</frontend_type>
+							<frontend_model>chronopostshipping/adminhtml_system_config_form_button
+							</frontend_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</synchronize>
+						<price_overcost translate="label">
+                            <label>PickMe Overcost</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price_overcost>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+					</fields>
+				</pickme>
+			</groups>
+		</carriers>
+	</sections>
+</config>

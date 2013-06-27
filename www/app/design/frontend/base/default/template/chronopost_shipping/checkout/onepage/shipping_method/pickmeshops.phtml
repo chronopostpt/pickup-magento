@@ -1,0 +1,43 @@
+<span id="pickmeshops_block" style="display: none">
+<span>
+<ul id="pickmeshops" class="form-list">
+	<?php echo $this->getChildHtml(); ?>
+</ul>
+<span id="pickmeshops-please-wait"
+	style="display: none;"> <img 
+	title="<?php echo $this->__('Fetching shops...')?>"
+	alt="<?php echo $this->__('Fetching shops...')?>"
+	src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif');?>"> <span><?php echo $this->__('Fetching shops...')?></span>
+</span>
+<script type="text/javascript">
+//<![CDATA[
+var radioSelectorString = 'input[type="radio"][name="shipping_method"][id="s_method_pickme_pickme"]';
+$$(radioSelectorString).each(function(el){
+    Event.observe(el, 'click', function(){
+        if (el.checked == true){
+            var shippingCode = el.getValue();
+ 
+            $$(radioSelectorString).each( function(el){ el.disable(); } );
+            $('pickmeshops').hide();
+            $('pickmeshops-please-wait').show();
+ 
+            new Ajax.Request('<?php echo $this->getPostUrl() ?>', {
+                method: 'post',
+                parameters: { 'shipping_code': shippingCode },
+                onSuccess: function(transport){ 
+                    var json = transport.responseText.evalJSON();
+                    Element.update('pickmeshops', json.dropdownhtml);
+                    $('pickmeshops-please-wait').hide();
+                    $('pickmeshops').show();
+                    $$(radioSelectorString).each( function(el){ el.enable(); } );
+                },
+                onFailure: function(){ 
+                    $('pickmeshops-please-wait').hide();
+                    $$(radioSelectorString).each( function(el){ el.enable(); } );
+                }
+            });
+        }
+    });
+});
+//]]>
+</script>

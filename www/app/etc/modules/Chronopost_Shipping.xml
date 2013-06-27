@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Chronopost_Shipping>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Shipping />
+				<Mage_Checkout />
+				<Mage_Sales />
+			</depends>
+		</Chronopost_Shipping>
+	</modules>
+</config>

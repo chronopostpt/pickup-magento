@@ -1,0 +1,31 @@
+<div id="<?php echo $this->getHtmlId(); ?>">
+	<ul>
+		<li id="pickme-details" class="fields">
+			<div class="field">
+				<label for="s_pickme"><?php echo $this->__('PickMe Store') ?>
+				</label>
+				<div class="input-box">
+					<select id="shipping-pickmestores" name="order[pickme]" id="s_pickme" title="<?php echo $this->__('PickMe Stores') ?>">
+					<?php
+						$shops = $this->getPickmeArrayOptions();
+						foreach($shops as $value => $shop):
+					?>
+						<option value="<?php echo $value; ?>" <?php if($value == $this->getSelectedPickme()) echo ' selected="selected"';?>><?php echo $this->htmlEscape($shop); ?></option>
+					<?php
+						endforeach;
+					?>
+					</select>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div style="display: none;" id="shipping-method-pickme-overlay"
+	class="overlay">
+	<span><?php echo $this->__('Not applicable for virtual orders.') ?>
+	</span>
+</div>
+<script type="text/javascript">
+order.overlay('shipping-method-overlay', true);
+order.overlay('shipping-method-pickme-overlay', <?php if ($this->getQuote()->isVirtual()): ?>false<?php else: ?>true<?php endif; ?>);
+</script>

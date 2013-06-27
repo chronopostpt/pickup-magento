@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">   
+    <checkout_onepage_index>
+		<reference name="checkout.progress">
+			<action method="setTemplate">
+				<template>chronopost_shipping/checkout/onepage/progress.phtml</template>
+			</action>
+		</reference>
+        <reference name="checkout.onepage.shipping_method.available">
+            <action method="setTemplate">
+                <template>chronopost_shipping/checkout/onepage/shipping_method/available.phtml</template>
+            </action>
+            <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="chronopost.checkout.onepage.shipping_method.available"></block>
+			<block type="chronopost_shipping/onepage_pickmeshops" name="chronopost.pickmeshops">
+                <block type="chronopost_shipping/onepage_pickmeshops_dropdown" name="chronopost.pickmeshops.dropdown"></block>
+            </block>
+        </reference>        
+    </checkout_onepage_index>
+	<checkout_onepage_progress>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>chronopost_shipping/checkout/onepage/progress.phtml</template>
+			</action>
+		</reference>    
+	</checkout_onepage_progress>
+    <checkout_onepage_shippingmethod>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>chronopost_shipping/checkout/onepage/shipping_method/available.phtml</template>
+            </action>
+            <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="chronopost.checkout.onepage.shipping_method.available"></block>
+                       <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="chronopost.checkout.onepage.shipping_method.available"></block>
+             <block type="chronopost_shipping/onepage_pickmeshops" name="chronopost.pickmeshops">
+                <block type="chronopost_shipping/onepage_pickmeshops_dropdown" name="chronopost.pickmeshops.dropdown"></block>
+            </block>
+        </reference>
+    </checkout_onepage_shippingmethod>
+	<sales_order_view>
+		<reference name="my.account.wrapper">
+			<block type="chronopost_shipping/display_pickmestore" after='sales.order.info'></block>
+		</reference>
+	</sales_order_view>
+	<sales_order_shipment>
+		<reference name="my.account.wrapper">
+			<block type="chronopost_shipping/display_pickmestore" after='sales.order.info'></block>
+		</reference>    
+	</sales_order_shipment>
+	<sales_order_creditmemo>
+		<reference name="my.account.wrapper">
+			<block type="chronopost_shipping/display_pickmestore" after='sales.order.info'></block>
+		</reference>    
+	</sales_order_creditmemo>
+	<sales_order_invoice>
+		<reference name="my.account.wrapper">
+			<block type="chronopost_shipping/display_pickmestore" after='sales.order.info'></block>
+		</reference>    
+	</sales_order_invoice>
+</layout>
