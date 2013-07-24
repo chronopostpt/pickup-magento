@@ -10,7 +10,22 @@ extends Mage_Adminhtml_Controller_Action
 			$url_ws = $this->getRequest()->getParam('url_ws');
 
 			if ($url_ws != "") {
-				$client = new SoapClient($url_ws);
+
+				$context = stream_context_create(
+					array(
+						'ssl' => array(
+							'verify_peer' => false,
+							'allow_self_signed' => true
+						)
+					)
+				);
+				$client = new SoapClient(
+					$url_ws,
+					array(
+						'stream_context' => $context
+					)
+				);
+
 				$result = $client->getPointList_V3();
 
 				Mage::getModel('pickmeshop/pickmeshop')->getCollection()->delete();
