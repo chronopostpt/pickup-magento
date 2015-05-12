@@ -2,10 +2,10 @@
 	<ul>
 		<li id="pickme-details" class="fields">
 			<div class="field">
-				<label for="s_pickme"><?php echo $this->__('PickMe Store') ?>
+				<label for="s_pickme"><?php echo $this->__('PickUp Store') ?>
 				</label>
 				<div class="input-box">
-					<select id="shipping-pickmestores" name="order[pickme]" id="s_pickme" title="<?php echo $this->__('PickMe Stores') ?>">
+					<select id="shipping-pickmestores" name="order[pickme]" id="s_pickme" title="<?php echo $this->__('PickUp Stores') ?>">
 					<?php
 						$shops = $this->getPickmeArrayOptions();
 						foreach($shops as $value => $shop):

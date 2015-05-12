@@ -151,7 +151,7 @@
 								<config>
 									<children>
 										<chronopostshipping>
-											<title>Chronopost PickMe Settings</title>
+											<title>Chronopost PickUp Settings</title>
 										</chronopostshipping>
 									</children>
 								</config>
@@ -172,10 +172,10 @@
 	<default>
 		<carriers>
 			<pickme>
-				<pickme_url>https://83.240.239.170:7554/ChronoWSB2CPointsv3/GetB2CPoints_v3Service?wsdl</pickme_url>
+				<pickme_url>http://83.240.239.170:7790/ChronoWSB2CPointsv3/GetB2CPoints_v3Service?wsdl</pickme_url>
 				<active>1</active>
 				<model>chronopost_shipping/carrier_customrate</model>
-				<title>Chronopost PickMe</title>
+				<title>Chronopost PickUp</title>
 				<name></name>
 				<price_overcost>0</price_overcost>
 			</pickme>

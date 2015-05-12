@@ -23,7 +23,7 @@
 			<action method="addColumnAfter">
 				<columnId>pickme</columnId>
 				<arguments module="Chronopost_Shipping" translate="header">
-					<header>PickMe ID</header>
+					<header>PickUp ID</header>
 					<index>pickme_id</index>
 				</arguments>
 				<after>shipping_name</after>

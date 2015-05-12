@@ -1,6 +1,6 @@
-<span id="pickmeshops_block" style="display: none">
-<span>
-<ul id="pickmeshops" class="form-list">
+<div id="pickmeshops_block" style="display: none">
+<div>
+<ul id="pickmeshops" class="form-list" style="display: none" >
 	<?php echo $this->getChildHtml(); ?>
 </ul>
 <span id="pickmeshops-please-wait"
@@ -9,6 +9,10 @@
 	alt="<?php echo $this->__('Fetching shops...')?>"
 	src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif');?>"> <span><?php echo $this->__('Fetching shops...')?></span>
 </span>
+</div>
+<br/>
+<br/>
+</div>
 <script type="text/javascript">
 //<![CDATA[
 var radioSelectorString = 'input[type="radio"][name="shipping_method"][id="s_method_pickme_pickme"]';

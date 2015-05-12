@@ -16,19 +16,19 @@ $installer->getConnection()->addColumn($installer->getTable('sales/quote_address
 		'TYPE'      => Varien_Db_Ddl_Table::TYPE_TEXT,
 		'LENGTH'    => 30,
 		'NULLABLE'  => true,
-		'COMMENT'   => 'Chronopost PickMe shop id'
+		'COMMENT'   => 'Chronopost PickUp shop id'
 ));
 $installer->getConnection()->addColumn($installer->getTable('sales/order'), 'pickme_id', array(
 		'TYPE'      => Varien_Db_Ddl_Table::TYPE_TEXT,
 		'LENGTH'    => 30,
 		'NULLABLE'  => true,
-		'COMMENT'   => 'Chronopost PickMe shop id'
+		'COMMENT'   => 'Chronopost PickUp shop id'
 ));
 $installer->getConnection()->addColumn($installer->getTable('sales/order_grid'), 'pickme_id', array(
 		'TYPE'      => Varien_Db_Ddl_Table::TYPE_TEXT,
 		'LENGTH'    => 30,
 		'NULLABLE'  => true,
-		'COMMENT'   => 'Chronopost PickMe shop id'
+		'COMMENT'   => 'Chronopost PickUp shop id'
 ));
 $installer->getConnection()->addKey($installer->getTable('sales/order_grid'), 'pickme_id_idx', 'pickme_id');
 $installer->endSetup();

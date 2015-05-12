@@ -4,7 +4,7 @@
 		<carriers>
 			<groups>
 				<pickme translate="label" module="shipping">
-					<label>Chronopost PickMe</label>
+					<label>Chronopost PickUp</label>
 					<frontend_type>text</frontend_type>
 					<sort_order>13</sort_order>
 					<show_in_default>1</show_in_default>
@@ -21,7 +21,7 @@
 							<show_in_store>1</show_in_store>
 						</active>
 						<pickme_url translate="label">
-							<label>PickMe webservice</label>
+							<label>PickUp webservice</label>
 							<frontend_type>text</frontend_type>
 							<sort_order>3</sort_order>
 							<show_in_default>1</show_in_default>
@@ -29,7 +29,7 @@
 							<show_in_store>1</show_in_store>
 						</pickme_url>
 					  	<synchronize translate="label">
-							<label>PickMe Shops</label>
+							<label>PickUp Shops</label>
 							<frontend_type>button</frontend_type>
 							<frontend_model>chronopostshipping/adminhtml_system_config_form_button
 							</frontend_model>
@@ -39,7 +39,7 @@
 							<show_in_store>1</show_in_store>
 						</synchronize>
 						<price_overcost translate="label">
-                            <label>PickMe Overcost</label>
+                            <label>PickUp Overcost</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>5</sort_order>
                             <show_in_default>1</show_in_default>
